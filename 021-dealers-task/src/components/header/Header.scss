@@ -1,0 +1,98 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    nav {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+
+        position: relative;
+
+        h1 {
+            font-size: 25px;
+        }
+
+        .text {
+            width:40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+         
+             .link {
+                width: calc(100%/6);
+                font-size: 18px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                text-decoration: none;
+
+                color: black;
+
+                cursor: pointer;
+
+                transition: ease-in-out 0.3s;
+
+                &:hover {
+                    color: skyblue;
+                }
+            }
+
+            .colored {
+                color:skyblue;
+
+                .subMenu {
+                    display: none;
+                }
+
+                &:hover {
+                    animation: slideEffect 0.3s forwards ease;
+                    .subMenu{
+                        display: flex;
+                        flex-direction: column;
+
+                        list-style: none;
+
+                        width: 200px;
+                        height: 100px;
+
+                        position: absolute;
+                        top: 30px;
+
+                        @keyframes slideEffect {
+                            0% {
+                              transform: translateY(20px);
+                            }
+                            100% {
+                              transform: translateY(10px);
+                            }
+                          }
+
+
+                    }
+                }
+            }
+        }
+        
+
+        ul {
+
+            width: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .icons {
+                cursor: pointer;
+            }
+
+           
+        }
+    }
+   
+}
