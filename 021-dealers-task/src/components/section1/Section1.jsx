@@ -12,6 +12,10 @@ const Section1 = () => {
         <strong>1,499</strong>
         <del>$1,999</del>
         </div>
+        <div className="btns">
+         <button className="btn1">Shop now</button>
+         <button className="btn2">Shop Now</button>
+        </div>
 
       </div>
       <div className="img">
