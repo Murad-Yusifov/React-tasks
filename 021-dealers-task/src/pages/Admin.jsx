@@ -1,8 +1,10 @@
 import React from 'react'
+import Header from '../components/header/Header'
 
 const Admin = () => {
   return (
-    <div>Admin</div>
+    <div>
+    </div>
   )
 }
 
