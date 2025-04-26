@@ -10,7 +10,7 @@ const Cart = ({image,title}) => {
         <div className="text">
             <p className='title'>{title}</p>
             <p>Summer Collection</p>
-            <p>$9.50</p>
+            <p className='price'>$9.50</p>
         </div>
     </div>
   )

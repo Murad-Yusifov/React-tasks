@@ -1,10 +1,18 @@
 .wrapper2 {
     width: 100%;
-    height: 100vh;
+    height: 200vh;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
+    
+}
+
+@media screen and (min-width: 300px) and (max-width:576px) {
+    .wrapper2 {
+        height: 300vh;
+        grid-template-columns: repeat(2,1fr);
+    }
     
 }
