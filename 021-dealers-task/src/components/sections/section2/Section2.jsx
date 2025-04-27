@@ -1,6 +1,6 @@
 import React from 'react'
 import './Section2.scss'
-import Cart from '../cart/Cart'
+import Cart from '../../cart/Cart'
 
 
 const Section2 = () => {

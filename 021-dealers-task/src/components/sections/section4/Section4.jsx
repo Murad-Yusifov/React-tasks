@@ -1,6 +1,6 @@
 import React from 'react'
 import './Section4.scss'
-import Cart2 from '../cart2/Cart2'
+import Cart2 from '../../cart2/Cart2'
 
 const Section4 = () => {
   return (
