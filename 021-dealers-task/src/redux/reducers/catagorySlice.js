@@ -60,12 +60,20 @@ const catagorySlice =createSlice({
         .addCase(postCatagorytThunk.fulfilled, (state, action)=>{
             state.catagory.push(action.payload)
         })
+        .addCase(postCatagorytThunk.rejected, (state, action) => {
+          state.error = action.error.message;
+        })
         // put 
   .addCase(putCatagoryThunk.fulfilled, (state, action) => {
     state.catagory = state.catagory.map((cat) =>
       cat.id === action.payload.id ? action.payload : cat
     );
   })
+  .addCase(putCatagoryThunk.rejected, (state, action) => {
+    state.error = action.error.message;
+  })
+
+  
 //   delete
   .addCase(deleteCatagoryThunk.fulfilled, (state, action) => {
     state.catagory = state.catagory.filter((cat) => cat.id !== action.payload);

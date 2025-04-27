@@ -12,6 +12,7 @@ const Admin = () => {
   const error = useSelector(store=>store.catagory.error)
 
   const [edit, setEdit] = useState(null);
+  const [editForm, setEditForm]=useState({name:"", description:""})
 
   useEffect(()=>{
     dispatch(getCatagoryThunk())
@@ -23,11 +24,13 @@ const Admin = () => {
 
   const handlePut =(item)=>{
     setEdit(item)
+    setEditForm({name:item.name, description:item.description})
 
   }
 
-  const handleEditSubmit =(updatedData)=>{
-    dispatch(putCatagoryThunk({id:edit.id,updatedData}))
+  const handleEditSubmit =(e)=>{
+    e.preventDefault();
+    dispatch(putCatagoryThunk({id:edit.id, updateData:editForm}))
     setEdit(null)
   }
 
@@ -37,18 +40,20 @@ const Admin = () => {
 
   return (
     <>
-    <div>
+    <div style={{display:'flex',flexDirection:'column', alignItems:'center'}}>
       <Form/>
     
-      <div>
+      <div style={{width:'100%', display:'flex', alignItems:'center',justifyContent:'center', flexWrap:'wrap', gap:"20px"
+      }}>
       {data && data.map(item=>(
-        <div>
+        <div style={{width:'200px', height:'300px', display:'flex',flexDirection:'column', justifyContent:'center', gap:'20px', alignItems:'center', border:'1px solid black', fontSize:'25px'
+        }}>
           <p>{item.name}</p>
           <p>{item.description}</p>
-          <button onClick={()=>handlePut(item)}>
+          <button style={{width:"90%", height:"30px", cursor:"pointer",fontSize:'20px', backgroundColor:'green', color:'white'}} onClick={()=>handlePut(item)}>
             Edit
             </button>
-            <button onClick={()=>handleDelete(item.id)}>
+            <button style={{width:"90%", height:"30px", cursor:"pointer",fontSize:'20px', backgroundColor:'green', color:"white"}} onClick={()=>handleDelete(item.id)}>
               Delete
             </button>
                     

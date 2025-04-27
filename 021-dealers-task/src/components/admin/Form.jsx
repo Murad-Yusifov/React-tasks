@@ -31,35 +31,31 @@ const Form = () => {
     },
   });
   return (
-  <div>
+  <div className='wrapped'>
     <form onSubmit={formik.handleSubmit} className='form'>
       
-       <label htmlFor="name">Add name
+       <label htmlFor="name"><p>Add name</p>
       <input
         id="name"
         name="name"
         type="text"
+        placeholder='Name'
         {...formik.getFieldProps("name")}
       />
      </label>
-      <label htmlFor="description">Add description
+      <label htmlFor="description"><p>Add description</p>
       <input
         id="description"
         name="description"
         type="text"
+        placeholder='Description'
         {...formik.getFieldProps("description")}
       />
       </label>
-
-
-
-   
-    
-     
       <button type="submit">Submit</button>
         
     </form> 
-    <div>      
+    <div className='forms'>      
 <div>{formik.errors.name}</div>
 
 <div>{formik.errors.description}</div>
