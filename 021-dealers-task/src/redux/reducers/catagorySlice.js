@@ -20,7 +20,7 @@ export const putCatagoryThunk = createAsyncThunk(
         `https://northwind.vercel.app/api/categories/${id}`,
         updatedData
       );
-      return res.data;
+      return  {id, ...updatedData};
     }
   );
 
@@ -63,6 +63,10 @@ const catagorySlice =createSlice({
         .addCase(postCatagorytThunk.rejected, (state, action) => {
           state.error = action.error.message;
         })
+        .addCase(postCatagorytThunk.pending,(state,action)=>{
+          state.loading=false
+          state.catagory.push(action.payload)
+        })
         // put 
   .addCase(putCatagoryThunk.fulfilled, (state, action) => {
     state.catagory = state.catagory.map((cat) =>
@@ -73,11 +77,28 @@ const catagorySlice =createSlice({
     state.error = action.error.message;
   })
 
+  .addCase(putCatagoryThunk.pending, (state)=>{
+    state.loading=true
+    state.error=null
+  })
+  .addCase(putCatagoryThunk.rejected, (state, action)=>{
+    state.loading=false
+    state.error=action.error.message
+  })
+
   
 //   delete
   .addCase(deleteCatagoryThunk.fulfilled, (state, action) => {
     state.catagory = state.catagory.filter((cat) => cat.id !== action.payload);
-  });
+  })
+  .addCase(deleteCatagoryThunk.pending, (state)=>{
+    state.loading=true
+    state.error=null
+  })
+  .addCase(deleteCatagoryThunk.rejected, (state, action)=>{
+    state.loading=false
+    state.error=action.error.message
+  })
 
 
     }
