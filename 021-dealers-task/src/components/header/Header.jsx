@@ -28,9 +28,9 @@ const Header = () => {
                 </div> 
             </NavLink>
             </div>
-             <div className="linked" ><NavLink  className={({ isActive }) => isActive ? "link  blue " : "link "} to="/">Shop</NavLink></div>
-           <div className="linked"> <NavLink className={({ isActive }) => isActive ? "link  blue" : "link "} to='/' >Catalogs</NavLink></div>
-            <div className="linked"><NavLink className={({ isActive }) => isActive ? "link  blue" : "link "} to='/'>Contact</NavLink></div>
+             <div className="linked" ><NavLink  className={({ isActive }) => isActive ? "link  blue " : "link "} to="/shop">Shop</NavLink></div>
+           <div className="linked"> <NavLink className={({ isActive }) => isActive ? "link  blue" : "link "} to='/catalogs' >Catalogs</NavLink></div>
+            <div className="linked"><NavLink className={({ isActive }) => isActive ? "link  blue" : "link "} to='/contact'>Contact</NavLink></div>
             <div className="linked"><NavLink className={({ isActive }) => isActive ? "link  blue" : "link "} to="/admin">Admin</NavLink></div>
           </ul>
           <ul className="icons-list">
