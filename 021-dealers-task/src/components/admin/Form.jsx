@@ -3,12 +3,10 @@ import { useFormik } from 'formik';
 import * as Yup from "yup"
 import { useDispatch } from 'react-redux';
 import { postCatagorytThunk } from '../../redux/reducers/catagorySlice';
+import './Form.scss'
 
 const Form = () => {
   const dispatch = useDispatch()
-
-
-
 
 
     const validationSchema =Yup.object({
@@ -17,7 +15,7 @@ const Form = () => {
         .required("Name is required"),
         description:Yup.string()
         .min(2,"Too short")
-        .required("Email must be written"),
+        .required("Description must be written"),
 
     })
 
@@ -33,39 +31,40 @@ const Form = () => {
     },
   });
   return (
-    <form onSubmit={formik.handleSubmit}>
+  <div>
+    <form onSubmit={formik.handleSubmit} className='form'>
       
-       <label htmlFor="name">Add name</label>
+       <label htmlFor="name">Add name
       <input
         id="name"
         name="name"
         type="text"
         {...formik.getFieldProps("name")}
       />
-      {formik.touched.description && formik.errors.description}
-     
-      <label htmlFor="description">Add description</label>
+     </label>
+      <label htmlFor="description">Add description
       <input
         id="description"
         name="description"
         type="text"
         {...formik.getFieldProps("description")}
       />
-        {formik.touched.description && formik.errors.description}
+      </label>
 
 
 
-      <div>
-
-      
-        <div>{formik.errors.name}</div>
-    
-        <div>{formik.errors.description}</div>
-      </div>
+   
     
      
       <button type="submit">Submit</button>
-    </form>
+        
+    </form> 
+    <div>      
+<div>{formik.errors.name}</div>
+
+<div>{formik.errors.description}</div>
+</div>
+    </div>
   );
 };
 

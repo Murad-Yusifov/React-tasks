@@ -39,15 +39,16 @@ const Admin = () => {
     <>
     <div>
       <Form/>
+    
       <div>
       {data && data.map(item=>(
         <div>
           <p>{item.name}</p>
           <p>{item.description}</p>
-          <button>
+          <button onClick={()=>handlePut(item)}>
             Edit
             </button>
-            <button>
+            <button onClick={()=>handleDelete(item.id)}>
               Delete
             </button>
                     

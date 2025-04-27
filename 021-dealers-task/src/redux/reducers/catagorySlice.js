@@ -6,7 +6,7 @@ export const getCatagoryThunk =createAsyncThunk("/catagories/get", async()=>{
     return res.data
 })
 
-export const postCatagoryThunk =createAsyncThunk("/catagories/post", 
+export const postCatagorytThunk =createAsyncThunk("/catagories/post", 
     async (data) => {
         await axios.post("https://northwind.vercel.app/api/categories/", data);
         return data;
@@ -31,6 +31,7 @@ export const putCatagoryThunk = createAsyncThunk(
       return id;
     }
   );
+
   
 const catagorySlice =createSlice({
     name: "catagory",
