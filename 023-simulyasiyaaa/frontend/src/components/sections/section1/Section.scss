@@ -1,0 +1,47 @@
+.section {
+    background-image:url('https://preview.colorlib.com/theme/robotics/img/banner-bg.jpg.webp');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .text {
+        width: 45%;
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+
+        h1 {
+            font-size: 40px;
+            width: 70%;
+            text-align: center;
+        }
+
+        button {
+            cursor: pointer;
+            font-size: 15px;
+            width: 200px;
+            height: 40px;
+            border: none;
+            transition: ease-in-out 0.4s;
+
+            &:hover {
+                background-color: #9C91FF;
+                border: 1px solid white;
+                color: white;
+            }
+        }
+
+    }
+
+    .img {
+        width: 45%;
+
+
+    }
+
+}
