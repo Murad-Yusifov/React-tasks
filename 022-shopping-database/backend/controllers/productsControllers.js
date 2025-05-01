@@ -5,13 +5,21 @@ const getProducts =async(req, res)=>{
     res.json(products)
 }
 
-const postProducts =async (req, res)=>{
-    const {image, title, description, price } = req.body
-    console.log(req.body)
+const postProducts = async (req, res) => {
+    try {
+        const { image, title, description, price } = req.body;
+        console.log(req.body);
 
-        const product = {image, title, description, price }
-        await ProductModel.create(product)    
-}
+        const product = { image, title, description, price };
+        const newProduct = await ProductModel.create(product);
+        
+        res.status(201).json(newProduct); // Response göndərin
+    } catch (error) {
+        res.status(500).json({ message: "Server error", error });
+    }
+};
+
+
 const deleteProduct = async (req, res) => {
     try {
         const { id } = req.params; // İstəkdən ID-ni alırıq
