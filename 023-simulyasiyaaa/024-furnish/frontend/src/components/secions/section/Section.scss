@@ -1,0 +1,51 @@
+.background {
+    width: 100%;
+   height: 900px;
+   top: 0;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   .text {
+    width: 50%;
+    height: 100%;
+    background-color: #D4EAF5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .texture {
+        width: 50%;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .best {
+            width: 50%;
+        }
+    
+        .btn {
+            width: 130px;
+            height: 50px;
+            border: 0;
+            color: black;
+            background-color: white;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+        
+       }
+
+   }
+
+   .img {
+    width: 50%;
+    height: 100%;
+    img {
+        width: 100%;   
+        height: 100%;
+        }
+}
+}
