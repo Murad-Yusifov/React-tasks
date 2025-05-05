@@ -1,0 +1,136 @@
+.wrapped {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .cart {
+        border: 1px solid black;
+        width: 25%;
+        height: 250px;
+        background-image: url('https://preview.colorlib.com/theme/cozastore/images/banner-01.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        transition: 0.4s;
+        .text {
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+    
+            .shop {
+                display: none;
+    
+            }
+    
+        }
+    
+        &:hover {
+            .shop {
+                transition: 0.4s;
+                display: flex;
+                border-bottom: 1px solid black;
+                animation: move 5s ease-in-out 4s;
+            }
+    
+            @keyframes move {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: 100%;
+                }
+            }
+        }
+        
+    }
+    .cart2 {
+        border: 1px solid black;
+        width: 25%;
+        height: 250px;
+        background-image: url('https://preview.colorlib.com/theme/cozastore/images/banner-02.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        transition: 0.4s;
+        .text {
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+    
+            .shop {
+                display: none;
+    
+            }
+    
+        }
+    
+        &:hover {
+            .shop {
+                transition: 0.4s;
+                display: flex;
+                border-bottom: 1px solid black;
+                animation: move 5s ease-in-out 4s;
+            }
+    
+            @keyframes move {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: 100%;
+                }
+            }
+        }
+        
+    }
+    .cart3 {
+        border: 1px solid black;
+        width: 25%;
+        height: 250px;
+        background-image: url('https://preview.colorlib.com/theme/cozastore/images/banner-03.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        transition: 0.4s;
+        .text {
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+    
+            .shop {
+                display: none;
+    
+            }
+    
+        }
+    
+        &:hover {
+            .shop {
+                transition: 0.4s;
+                display: flex;
+                border-bottom: 1px solid black;
+                animation: move 5s ease-in-out 4s;
+            }
+    
+            @keyframes move {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: 100%;
+                }
+            }
+        }
+        
+    }
+}
