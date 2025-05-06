@@ -1,0 +1,38 @@
+.wrapper4 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .head {
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carts {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .cart {
+      width: 20%;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      .title {
+        font-size: 18px;
+      }
+      span {
+        font-size: 20px;
+      }
+    }
+  }
+}

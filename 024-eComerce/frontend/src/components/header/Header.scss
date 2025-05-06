@@ -1,0 +1,27 @@
+.wrapper {
+    width: 100%; 
+    height: 90px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    nav {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        ul {
+            list-style: none;
+            width: 40%;
+            display: flex;
+            justify-content: space-around;
+            font-size: 18px;
+
+            li{
+                .link {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
+    }
+}

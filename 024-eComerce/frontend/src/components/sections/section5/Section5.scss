@@ -1,0 +1,77 @@
+.wrapeper5 {
+    width: 100%;
+    height: 300px;
+    background-color: #F9F9FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .whole {
+        width: 50%;
+        display: flex;
+        .img {
+            width: 30%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+
+            }
+        }
+
+        .number {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+
+            .numbered {
+                width: 200px;
+                height: 50px;
+                width: calc(100%/4);
+                background-color: white;
+                .colored {
+                    color: white;
+
+                }
+                p {
+                    font-size: 25px;
+                    
+                }
+                
+            }
+
+            .number1 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                p {
+                    background-color: rgb(255, 111, 135);
+                }
+            }
+
+            
+
+    
+
+            .btn {
+                width: 100px;
+                height: 30px;
+                position: absolute;                
+                bottom: 60px;
+                right: -80px;
+                z-index: 1000;
+                border: none;
+                cursor: pointer;
+
+            }
+
+        }
+    }
+
+
+}
