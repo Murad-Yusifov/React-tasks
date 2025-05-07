@@ -6,6 +6,6 @@ const router =express.Router()
 router
 .get('/products', getProduct)
 .post('/products', postProduct)
-.delete('/products', deleteProduct)
+.delete('/products/:id', deleteProduct)
 
 export default router

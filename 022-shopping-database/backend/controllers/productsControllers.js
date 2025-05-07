@@ -34,4 +34,27 @@ const deleteProduct = async (req, res) => {
         res.status(500).json({ message: "Server səhvi", error });
     }
 };
-export {getProducts, postProducts, deleteProduct}
+   
+  const putProduct = async (req,res)=>{
+    try {
+        const {id}=req.params
+        const product =res.body
+
+        const newProduct = await ProductModel.findByIdAndUpdate(id,product, {
+            new:true,
+            runValidators:true
+        })
+        if(!newProduct) {
+            // return 
+            res.status(404).json({message:"Product not found"})
+        }
+        res.status(200).json(newProduct)
+    } catch (error) {
+        res.status(500).json({message:error.message})
+        
+    }
+  }
+
+
+
+export {getProducts, postProducts, deleteProduct,putProduct}

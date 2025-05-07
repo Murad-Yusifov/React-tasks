@@ -15,6 +15,6 @@ app.use('/', ProductRouter)
 connectDB()
 
 app.listen(5000, ()=>{
-    console.log("backen running");
+    console.log("backend running");
     
 })

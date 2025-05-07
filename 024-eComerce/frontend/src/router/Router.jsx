@@ -5,15 +5,17 @@ import Layout from '../components/Layout'
 import NotFound from '../components/NotFound'
 import { Provider } from 'react-redux'
 import { store } from '../redux/store'
+import Admin from '../pages/Admin'
 
 const Router = () => {
   return (
     <BrowserRouter>
     <Provider store={store}>
     <Routes>
-       <Route to="/" element={<Layout/>}>
+       <Route path="/" element={<Layout/>}>
        <Route path='/' element={<Home/>}/>
        </Route>
+       <Route path='/admin' element={<Admin/>}/>
        <Route path='*' element={<NotFound/>}/>
     </Routes>
     </Provider>

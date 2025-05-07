@@ -16,8 +16,13 @@ const Header = () => {
                 <li><Link className='link' to='*'>Men</Link></li>
                 <li><Link className='link' to='*'>Women</Link></li>
                 <li><Link className='link' to='*'>Latest</Link></li>
-                <li><Link className='link' to='/admin'>Pages</Link></li>
+                <li><Link className='link' to='/admin'>Admin</Link></li>
             </ul>
+            <div className="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
         </nav>
     </div>
     </>
