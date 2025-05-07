@@ -1,19 +1,21 @@
 import React from 'react'
-import Section from './section1/Section'
-import Section2 from './section2/section2'
+import Section2 from './section2/Section2'
+import Section from './section/Section'
 import Section3 from './section3/Section3'
+import HeadTag from './section3/HeadTag'
+import HeadText from './section3/HeadText'
 import Section4 from './section4/Section4'
-import Section5 from './section5/Section5'
-import Section6 from './section6/Section6'
+
 const Sections = () => {
   return (
     <>
     <Section/>
     <Section2/>
+    <HeadText/>
+    <Section3/>
+    <HeadTag/>
     <Section3/>
     <Section4/>
-    <Section5/>
-    <Section6/>
     </>
   )
 }

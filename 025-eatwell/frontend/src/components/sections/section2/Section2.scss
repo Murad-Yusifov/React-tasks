@@ -1,0 +1,53 @@
+.wrapper3 {
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .text {
+        width: 35%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        .our {
+            color: gray;
+
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        .for {
+            width: 80%;
+        }
+
+        .btn {
+            width: 180px;
+            height: 45px;
+            border: 1px solid rgb(171, 171, 171);
+            background-color: transparent;
+            transition: ease-in-out 0.4s;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #FDA403;
+                border: none;
+                color: white;
+            }
+
+        }
+    }
+
+    .imgBox {
+        width: 35%;
+        img {
+            width: 100%;
+        }
+    }
+
+
+}

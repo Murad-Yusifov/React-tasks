@@ -1,0 +1,104 @@
+.wrapper {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  nav {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+      p {
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        color: white;
+      }
+    }
+
+    ul {
+      width: 45%;
+      display: flex;
+      list-style: none;
+      justify-content: space-between;
+      li {
+        text-transform: uppercase;
+        .link {
+          color: rgb(114, 114, 114);
+          text-decoration: none;
+          font-size: 14px;
+        }
+        .link1 {
+          color: white;
+        }
+      }
+    }
+
+    .menu {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .wrapper {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    nav {
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .logo {
+        p {
+            color: black;
+        }
+      }
+
+      ul {
+        display: none;
+      }
+
+      .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        gap: 10px;
+
+        .burger {
+          width: 30px;
+          height: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+
+          &:active {
+            nav {
+              .visible {
+                display: flex;
+              }
+            }
+          }
+
+          cursor: pointer;
+
+          span {
+            background-color: rgb(0, 0, 0);
+            width: 100%;
+            height: 3px;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}
