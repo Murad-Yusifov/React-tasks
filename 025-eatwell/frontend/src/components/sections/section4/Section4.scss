@@ -1,0 +1,33 @@
+.wrapper4 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  .text {
+    h1 {
+      font-size: 60px;
+    }
+
+    p {
+      width: 30%;
+    }
+  }
+
+  .wrapped {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    align-self: center;
+    justify-self: center;
+
+    .imgBox {
+      width: 80%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
