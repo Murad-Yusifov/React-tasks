@@ -64,11 +64,11 @@ const basketSlice = createSlice({
       })
       .addCase(getBasketThunk.fulfilled, (state, action) => {
         state.loading = false;
-        state.items = action.payload; // Basket-dən alınan dataları items-ə əlavə edirik
+        state.items = action.payload; 
       })
       .addCase(getBasketThunk.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload; // Xəta baş verərsə
+        state.error = action.payload; 
       })
 
 
