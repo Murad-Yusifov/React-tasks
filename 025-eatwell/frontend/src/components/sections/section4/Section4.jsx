@@ -31,7 +31,7 @@ const Section4 = () => {
 
        <div className="wrapped">
        {data && data.map(item=>(
-          <div className="imgBox">
+          <div key={item._id} className="imgBox">
             <img src={item.image} alt="" />
           </div>
         ))}

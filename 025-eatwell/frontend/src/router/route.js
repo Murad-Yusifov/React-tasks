@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import Layout from "../components/Layout";
 import Home from "../pages/Home";
 import NotFound from "../components/NotFound";
+import Basket from "../pages/Basket";
 
 
 export const route = createBrowserRouter([
@@ -12,7 +13,11 @@ export const route = createBrowserRouter([
             {
                 path: '/',
                 Component: Home,
-            }
+            },
+            {
+                path:"/basket",
+                element:Basket
+            },
         ]},
         {
             path:'*',
