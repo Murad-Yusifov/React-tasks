@@ -1,0 +1,237 @@
+.wrapper4 {
+    width: 100%;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-left: 200px;
+    justify-self: center;
+    align-items: center;
+    gap: 20px;
+
+    background-image: url("https://mobirise.com/extensions/floram4/floral-studio/assets/images/background2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .cart {
+        width: 60%;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+
+        .imgBox {
+            width: 100%;
+            height: 100%;
+            .image {
+                width: 100%;
+                height: 80%;
+            }
+        }
+    }
+
+
+
+
+}
+    .under {
+        
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 30px;
+
+        background-image: url("https://mobirise.com/extensions/floram4/floral-studio/assets/images/background2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        color: #0C5B47;
+
+        padding-bottom: 30px;
+
+        .text {
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            p {
+                font-size: 15px;
+            }
+            h1 {
+                font-size: 30px;
+                font-weight: 100;
+            }
+        }
+
+        .cart1 {
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .carts {
+                width: calc(100%/4);
+                height: 450px;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                border: 1px solid #0C5B47;
+                color: #0C5B47;
+                background-color: #FEF1E6;
+
+                .lorem {
+                    width: 80%;
+                    text-align: center;
+                }
+
+                .table {
+                    font-size: 25px;
+
+                    span {
+                        width: 40px;
+                    }
+                }
+
+                .btn {
+                    width: 40%;
+                    height: 40px;
+                    color: #0C5B47;
+                    background-color: #D8E3D5;
+                    border: none;
+                    cursor: pointer;
+                }
+
+
+            }
+
+        }
+
+    }
+
+
+    @media screen and (max-width:576px) {
+        .wrapper4 {
+            width: 100%;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            gap: 20px;
+        
+            background-image: url("https://mobirise.com/extensions/floram4/floral-studio/assets/images/background2.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        
+            .cart {
+                width: 95%;
+                height: 650px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 20px;
+        
+                .imgBox {
+                    width: 100%;
+                    height: 70%;
+                    .image {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        
+        
+        
+        
+        }
+            .under {
+                
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding-top: 30px;
+        
+                background-image: url("https://mobirise.com/extensions/floram4/floral-studio/assets/images/background2.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+        
+                padding-bottom: 30px;
+        
+                .text {
+                    height: 100px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    p {
+                        font-size: 15px;
+                    }
+                    h1 {
+                        font-size: 45px;
+                    }
+                }
+        
+                .cart1 {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 20px;
+        
+                    .carts {
+                        width: 90%;
+                        height: 300px;
+        
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 30px;
+                        border: 1px solid #0C5B47;
+                        color: #0C5B47;
+                        background-color: #FEF1E6;
+                        
+        
+                        .lorem {
+                            width: 80%;
+                            text-align: center;
+                        }
+        
+                        .table {
+                            font-size: 25px;
+        
+                            span {
+                                width: 40px;
+                            }
+                        }
+        
+                        .btn {
+                            width: 40%;
+                            height: 40px;
+                            color: #0C5B47;
+                            background-color: #D8E3D5;
+                            border: none;
+                            cursor: pointer;
+                        }
+        
+        
+                    }
+        
+                }
+        
+            }
+        
+    }
