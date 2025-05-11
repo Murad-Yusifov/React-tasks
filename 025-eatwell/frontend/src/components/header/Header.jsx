@@ -11,13 +11,13 @@ const Header = () => {
             </div>
 
             <ul className='visible'> 
-                <li><Link className='link link1' path="/">Home</Link></li>
-                <li><Link className='link' path="/">About</Link></li>
-                <li><Link className='link' path="/">Offer</Link></li>
-                <li><Link className='link' path="/">Menu</Link></li>
-                <li><Link className='link' path="/">News</Link></li>
-                <li><Link className='link' path="/">Gallery</Link></li>
-                <li><Link className='link' path="/admin">Contect</Link></li>
+                <li><Link className='link link1' to="/">Home</Link></li>
+                <li><Link className='link' to="/">About</Link></li>
+                <li><Link className='link' to="/">Offer</Link></li>
+                <li><Link className='link' to="/">Menu</Link></li>
+                <li><Link className='link' to="/">News</Link></li>
+                <li><Link className='link' to="/basket">Basket</Link></li>
+                <li><Link className='link' to="/admin">Admin</Link></li>
             </ul>
 
             <div className="menu">

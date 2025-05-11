@@ -1,0 +1,185 @@
+.wrapper3 {
+  width: 100%;
+  min-height: 900px;
+  background-image: url("https://mobirise.com/extensions/floram4/floral-studio/assets/images/background2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 30px;
+  .top {
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    .left {
+        height: 500px;
+        background-color: #0c5b47;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        gap: 20px;
+    h2 {
+        font-size: 60px;
+        font-weight: 100;
+    }
+    p {
+        width: 70%;
+    }
+
+    .btn {
+        width: 30%;
+        height: 40px;
+        cursor: pointer;
+        color: #0c5b47;
+        background-color: #C4D5C0;
+        border: none;
+
+        &:hover {
+            background-color: #aebbab ;
+        }
+    }
+    }
+  }
+
+  .bottom {
+    display: flex;
+
+    .row {
+        display: flex;
+        gap: 10px;
+        color: #0c5b47;
+       justify-content: center;
+
+    }
+
+    .one {
+        width: calc(100%/4);
+
+        .above {
+            display: flex;
+            font-size: 30px;
+            justify-content: center;
+           
+        }
+
+        .low {
+            width: 100%;
+            text-align: center;
+
+            p {
+                width: 80%;
+            }
+        }
+    }
+  }
+
+
+  }
+
+  @media screen and (max-width:576px) {
+    .wrapper3 {
+        width: 100%;
+        min-height: 900px;
+        background-image: url("https://mobirise.com/extensions/floram4/floral-studio/assets/images/background2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 10px;
+      
+        padding: 30px;
+        .top {
+          height: 60%;
+          display: flex;
+          flex-direction: column-reverse;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+      
+          .left {
+              height: 300px;
+              background-color: #0c5b47;
+              display: flex;
+              flex-direction: column;
+              color: white;
+              gap: 20px;
+          h2 {
+              font-size: 50px;
+              font-weight: 100;
+          }
+          p {
+              width: 70%;
+          }
+      
+          .btn {
+              width: 30%;
+              height: 40px;
+              cursor: pointer;
+              color: #0c5b47;
+              background-color: #C4D5C0;
+              border: none;
+      
+              &:hover {
+                  background-color: #aebbab ;
+              }
+          }
+          }
+
+          .right {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+          }
+        }
+      
+        .bottom {
+          display: flex;
+      
+          .row {
+            width: 100%;
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              color: #0c5b47;
+             justify-content: center;
+      
+          }
+      
+          .one {
+              width: 100%;
+      
+              .above {
+                  display: flex;
+                  font-size: 30px;
+                  justify-content: flex-start;
+                 
+              }
+      
+              .low {
+                  width: 100%;
+      
+                  p {
+                      width: 80%;
+                  }
+              }
+          }
+        }
+      
+      
+        }
+      
+    
+  }
