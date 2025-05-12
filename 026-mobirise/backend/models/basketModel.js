@@ -3,15 +3,13 @@ import mongoose from "mongoose";
 
 const basketSchema = new mongoose.Schema({
     items: [
-       {
-        image:String,
-        title:String,
-        price:Number
-       }
+      {
+        type:mongoose.Schema.Types.Mixed,
+      }
     ]
 }, {timestamps:true})
 
-const basketModel =mongoose.model('basket', basketSchema)
+const basketModel =mongoose.model('baskets', basketSchema)
 
 export default basketModel
 

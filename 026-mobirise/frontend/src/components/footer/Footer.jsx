@@ -22,7 +22,8 @@ const Footer = () => {
             <button className="btn">Send</button>
           </label>
         </div>
-        <ul>
+       <div className="can">
+         <ul>
           <li>About</li>
           <li>About Us</li>
           <li>Our Partners</li>
@@ -38,6 +39,7 @@ const Footer = () => {
         <div className="collect">
           <p>Follow Us</p>
         </div>
+       </div>
         </div>
    
       </div>

@@ -1,11 +1,11 @@
 import express from 'express'
-import { deleteBasket, getBasket, postBasket,  } from '../controllers/basketController.js'
+import {getBasket, deleteBasket, postBasket  } from '../controllers/basketController.js'
 
 const router =express.Router()
 
 router
-.get('/basket', getBasket)
-.post('/basket', postBasket)
-.delete('/basket/:id', deleteBasket)
+.get('/baskets', getBasket)
+.post('/baskets', postBasket)
+.delete('/baskets:id', deleteBasket)
 
 export default router

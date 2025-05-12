@@ -11,6 +11,7 @@ export const connectDB = async()=>{
         
     } catch (error) {
         console.log(error);
+        console.error("Database əlaqəsi zamanı xəta:", error)
         
         
     }
