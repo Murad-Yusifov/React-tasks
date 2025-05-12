@@ -1,0 +1,83 @@
+.section5 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  .imageBox {
+    width: 20%;
+
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .icon {
+      display: none;
+    }
+
+    &:hover {
+      .icon {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 40px;
+        color: white;
+        animation: icons 5s linear .02s infinite alternate;
+
+        
+
+      }
+
+      @keyframes icons {
+        0% { transform: translateY(-10px);
+
+        }
+        25% { transform: translateY(-10px);
+
+        }
+        50% { transform: translateY(-10px);
+
+        }
+        75% { transform: translateY(-10px);
+
+        }
+        100% { transform: translateY(-10px);
+
+        }
+        
+        
+      }
+      .div {
+       
+        animation: myfirst 1s linear .02s infinite ;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        
+      }
+
+      @keyframes myfirst {
+        0% { background-color: rgba(0, 128, 255, 0.166);
+
+        }
+        25% { background-color: rgba(0, 128, 255, 0.324);
+
+        }
+        50% { background-color: rgba(0, 128, 255, 0.492);
+
+        }
+        75% { background-color: rgba(0, 128, 255, 0.587);
+
+        }
+        100% { background-color: rgba(0, 128, 255, 0.657);
+
+        }
+        
+      }
+
+    }
+  }
+}

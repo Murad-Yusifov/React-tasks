@@ -1,0 +1,161 @@
+.wrapped {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #F4F4F4;
+
+    nav {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .Table {
+            width: 50%;
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+
+            .shop {
+                position: relative;
+
+                transition: linear 0.4s;
+
+                cursor: pointer;
+
+
+                .catagory{
+                    display: none;
+                }
+
+                &:hover {
+                    .catagory{
+                        width: 120px;
+                        height: 60px;
+                        background-color: #2878FF;
+                        color: white;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: 8px;
+
+                        padding-left: 10px;
+                        border-radius: 10px;
+
+                        position: absolute;
+                        top: 20px;
+
+                        li {
+                cursor: pointer;
+
+                        }
+
+
+                    }
+
+                }
+            }
+
+            .pages {
+                position: relative;
+                transition: linear 0.4s;
+
+                cursor: pointer;
+
+
+
+                .login {
+                    display: none;
+
+                }
+
+                &:hover {
+
+                    .login {
+                        width: 120px;
+                        height: 220px;
+                        background-color: #2878FF;
+                        color: white;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: 8px;
+
+                        padding-left: 10px;
+                        border-radius: 10px;
+
+
+                        position: absolute;
+                        top: 20px;
+
+                        li {
+                cursor: pointer;
+
+                        }
+    
+                    }
+                    
+                }
+            }
+
+            .blog {
+                position: relative;
+                transition: linear 0.4s;
+
+                cursor: pointer;
+
+
+                .single {
+                    display: none;
+
+                }
+                &:hover {
+                    .single {
+                        width: 100px;
+                        height: 60px;
+                        background-color: #2878FF;
+                        color: white;
+                        display: flex;
+                        flex-direction: column;
+                        align-content: space-evenly;
+                        justify-content: center;
+                        padding-left: 10px;
+
+                        position: absolute;
+                        border-radius: 10px;
+
+                        top: 20px;
+
+                        li {
+                cursor: pointer;
+
+                        }
+
+                    }
+
+                }
+            }
+
+            li {
+                cursor: pointer;
+
+            }
+
+
+        }
+
+        .icons {
+            width: 5%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+        }
+
+
+
+    }
+}
