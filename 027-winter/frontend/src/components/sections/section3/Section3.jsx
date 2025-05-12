@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import './Section3.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProduct } from '../../../redux/reducers/productSlice'
+import { postBasket } from '../../../redux/reducers/basketSlice'
 
 const Section3 = () => {
 
@@ -38,7 +39,7 @@ const Section3 = () => {
           {data && data.map(item=>(
             <div className="carts" key={item._id}>
               <img src={item.image} alt="" />
-              <button className='btn'>Add to Basket</button>
+              <button className='btn' onClick={()=>dispatch(postBasket(item))}>Add to Basket</button>
             </div>
           ))}
           

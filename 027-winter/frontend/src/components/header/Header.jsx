@@ -5,6 +5,7 @@ import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router";
 
 const Header = () => {
+  
   return (
     <>
       <div className="wrapped">
@@ -17,7 +18,7 @@ const Header = () => {
           </div>
           <ul className="Table">
             <li>
-              Home
+              <Link to='/'>Home</Link>
             </li>
             <li className="shop">
               Shop

@@ -9,6 +9,8 @@ const Section = () => {
   const data = useSelector(state=>state.basket.basket)
   const loading = useSelector(state=>state.basket.loading)
   const error = useSelector(state=>state.basket.error)
+
+  
   
 
   useEffect(()=>{
@@ -21,11 +23,14 @@ const Section = () => {
 
   return (
     <div>
-        {data && data.map(item=>(
-            <div className="cart">
-                <img src={item.image} alt="" />
-            </div>
-        ))}
+         <div className="image-list">
+      {data && data.map((item, index) => (
+        <div key={index}>
+          <img src={item.image} alt={index} />
+          
+        </div>
+      ))}
+    </div>
     </div>
   )
 }
