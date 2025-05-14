@@ -20,8 +20,8 @@ const basketSlice = createSlice({
     name:"basket",
     initialState:[],
     reducers:{},
-    extraReducers:builder=>{
-        builder
+    extraReducers:(builder)=>{
+        builder     
         .addCase(getBasketThunk.pending, (state)=>{
             state.loading= true
         })
