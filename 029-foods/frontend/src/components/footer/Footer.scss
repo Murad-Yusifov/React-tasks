@@ -1,0 +1,137 @@
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .rowUp {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+        background-color: #F7F6F2;
+        
+
+        position: relative;
+
+        .left {
+            height: 100%;
+            display: flex;
+         flex-direction: column;
+         justify-content: center;
+         gap: 10px;
+
+        }
+
+        .right {
+            width: 20%;
+
+            label {
+                width: 100%;
+                height: 50px;
+                display: flex;
+                justify-content: space-between;
+                input {
+                    width: 70%;
+                    outline: none;
+                    border: none;
+                    padding-left: 10px;
+                    font-size: 18px;
+                }
+                .btn {
+                    width: 30%;
+                    border: none;
+                    cursor: pointer;
+                    background-color: #82AE46;
+                    color: white;
+                }
+            }
+
+        }
+
+         .round {
+        width: 50px;
+        height: 50px;
+        background-color: greenyellow;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        rotate: -90deg;
+        color: white;
+        font-size: 30px;
+        font-weight: 600;
+        position: absolute;
+        bottom: -22px;
+    }
+
+
+    }
+
+   
+
+    .rowDown {
+        width: 100%;
+        height: 240px;
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+
+        .upper {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+
+            .contain {
+                width: 20%;
+                display:flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .local {
+            width: 18%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content:space-between;
+
+            p {
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            .same {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 18px;
+                p  {
+                    width:80%;
+                    font-weight: 100;
+                }
+
+                span {
+                     width:80%;
+                    font-weight: 100;
+
+                    
+                }
+            }
+
+        }
+    }
+
+
+}

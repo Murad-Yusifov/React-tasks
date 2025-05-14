@@ -1,0 +1,35 @@
+.wrapper1 {
+  width: 100%;
+  min-height: 300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .icons {
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+
+    .contain {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        .icon {
+            font-size: 40px;
+            border-radius: 50%;
+        }
+
+        .free {
+            font-size: 20px;
+        }
+        .on {
+            font-size: 15px;
+        }
+    }
+  }
+}
