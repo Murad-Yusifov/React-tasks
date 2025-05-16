@@ -81,11 +81,6 @@ const catagorySlice =createSlice({
     state.loading=true
     state.error=null
   })
-  .addCase(putCatagoryThunk.rejected, (state, action)=>{
-    state.loading=false
-    state.error=action.error.message
-  })
-
   
 //   delete
   .addCase(deleteCatagoryThunk.fulfilled, (state, action) => {
