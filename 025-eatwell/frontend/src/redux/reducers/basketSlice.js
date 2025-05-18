@@ -3,17 +3,17 @@ import axios from "axios";
 
 
 export const getBasketThunk = createAsyncThunk(
-    'basket/get',
-    async () => {
-      try {
-        const response = await axios.post('http://localhost:5000/basket');
-        return response.data
-      } catch (error) {
-        console.log(error);
-        
-      }
+  'basket/get',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axios.get('http://localhost:5000/basket');
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data || error.message);
     }
-  );
+  }
+);
+
   
 
 export const addToBasketAsync = createAsyncThunk(
