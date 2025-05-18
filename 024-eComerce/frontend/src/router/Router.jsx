@@ -6,6 +6,7 @@ import NotFound from '../components/NotFound'
 import { Provider } from 'react-redux'
 import { store } from '../redux/store'
 import Admin from '../pages/Admin'
+import Wish from '../pages/wish/Wish'
 
 const Router = () => {
   return (
@@ -16,6 +17,7 @@ const Router = () => {
        <Route path='/' element={<Home/>}/>
        </Route>
        <Route path='/admin' element={<Admin/>}/>
+       <Route path='/wish' element={<Wish/>}/>
        <Route path='*' element={<NotFound/>}/>
     </Routes>
     </Provider>

@@ -33,8 +33,10 @@ const Section4 = () => {
     data.map((item) => (
       <div className="cart" key={item.id}>
         <img src={item.image} alt={item.title} />
-        <span className="title">{item.title}</span>
-        <span>${item.price}</span>
+        <div className="btn">
+          <button>Add to Basket</button>
+        </div>
+
       </div>
     ))}
 </div>

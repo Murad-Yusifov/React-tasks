@@ -36,7 +36,7 @@ const productSlice = createSlice({
         // Post
         .addCase(postProductThunk.fulfilled, (state, action)=>{
             state.loafding =false
-           state.products.push(state.payload)
+           state.products.push(action.payload)
         })
           // Delete
           .addCase(deleteProductThunk.fulfilled, (state, action)=>{

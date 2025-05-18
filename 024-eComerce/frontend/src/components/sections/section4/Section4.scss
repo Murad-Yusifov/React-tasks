@@ -15,8 +15,9 @@
   }
 
   .carts {
-    width: 70%;
+    width: 90%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -26,13 +27,25 @@
       height: 300px;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
       gap: 5px;
-      .title {
-        font-size: 18px;
-      }
-      span {
-        font-size: 20px;
-      }
+    .btn {
+      width: 100%;
+      display: flex;
+      justify-self: center;
+      align-items: center;
+         button {
+            width: 80%;
+            height: 35px;
+            color: white;
+            background-color: rgb(6, 157, 216);
+            border: none;
+            font-size: 12px;
+            cursor: pointer;
+          }
+    }
+
     }
   }
 }
