@@ -13,7 +13,7 @@ const Basket = () => {
 
     useEffect(() => {
         dispatch(getBasketThunk())  
-    }, [dispatch])  
+    }, [])  
 
  
     if (loading) return <span>Loading...</span>

@@ -46,7 +46,7 @@ const Admin = () => {
 
   useEffect(() => {
     dispatch(getBasketThunk())
-  }, [dispatch])
+  }, [])
 
   if (loading) return <span>Loading . . .</span>
   if (error) return <span>Error: {error}</span>
