@@ -6,6 +6,6 @@ const router =express.Router()
 router
 .get('/baskets', getBasket)
 .post('/baskets', postBasket)
-.delete('/baskets:id', deleteBasket)
+.delete('/baskets/:id', deleteBasket)
 
 export default router
