@@ -4,7 +4,6 @@ import Basket from "../pages/basket/Basket";
 import NotFound from "../components/NotFound";
 import Layout from "../components/Layout";
 import Admin from "../pages/admin/Admin";
-import Wish from "../pages/wish/Wish";
 
 export const router = createBrowserRouter([
     {
@@ -21,10 +20,6 @@ export const router = createBrowserRouter([
                 path:"/admin",
                 Component:Admin
 
-            },
-            {
-                path:'/wish',
-                Component:Wish
             }
             
         ]

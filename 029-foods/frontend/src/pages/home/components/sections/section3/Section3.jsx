@@ -3,7 +3,6 @@ import './Section.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProductThunk } from '../../../../../redux/reducers/productSlice'
 import { postBasketThunk } from '../../../../../redux/reducers/basketSlice'
-import { postWishThunk } from '../../../../../redux/reducers/wishSlice'
 
 const Section3 = () => {
   const dispatch = useDispatch()
@@ -11,7 +10,6 @@ const Section3 = () => {
   const data = useSelector(state=>state.product.products)
   const loading = useSelector(state=>state.product.loading)
   const error = useSelector(state=>state.product.error)
-  const wishList = useSelector((state) => state.wish.wish)
 
 
   useEffect(()=>{
@@ -19,14 +17,14 @@ const Section3 = () => {
   },[dispatch])
 
 
-const handleWish = (item) => {
-  const isAlreadyAdded = wishList.some((wishItem) => wishItem.image === item.image);
-  if (isAlreadyAdded) {
-    alert("This item is already in the wish list");
-  } else {
-    dispatch(postWishThunk(item));
-  }
-};
+// const handleWish = (item) => {
+//   const isAlreadyAdded = wishList.some((wishItem) => wishItem.image === item.image);
+//   if (isAlreadyAdded) {
+//     alert("This item is already in the wish list");
+//   } else {
+//     dispatch(postWishThunk(item));
+//   }
+// };
 
 
 
@@ -50,7 +48,7 @@ const handleWish = (item) => {
           <button className="btn" onClick={()=>dispatch(postBasketThunk(item))}>
             Add to basket
           </button>
-            <button className="btn" onClick={()=>handleWish(item)}>
+            <button className="btn">
             Add to wish
           </button>
           </div>

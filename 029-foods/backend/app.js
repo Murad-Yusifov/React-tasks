@@ -3,7 +3,8 @@ import cors from 'cors'
 import { connectDB } from './config/config.js'
 import productRouter from './router/productRoute.js'
 import basketRouter from './router/basketRouter.js'
-import wishBasket from './router/wishRoute.js'
+
+
 
 const app = express()
 
@@ -13,7 +14,6 @@ app.use(cors("*"))
 
 app.use('/', productRouter)
 app.use('/', basketRouter)
-app.use('/', wishBasket)
 
 connectDB()
 
