@@ -1,47 +1,33 @@
 import React, { useEffect, useState } from "react";
 import "./Section3.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { getProductThunk } from "../../../redux/reducers/productSlice";
 import { postBasketThunk } from "../../../redux/reducers/basketSlice";
+import { getProductThunk } from "../../../redux/reducers/productSlice";
 
 const Section3 = () => {
   const [wish, setWish] = useState([]);
 
-  // İlk olaraq localStorage-dan "wish" məlumatını yükləyirik
   useEffect(() => {
-    const savedWish = JSON.parse(localStorage.getItem("wish")) || [];
-    setWish(savedWish);
+    const storedWish = JSON.parse(localStorage.getItem("wish")) || [];
+    setWish(storedWish); // Əvvəlcə localStorage-dakı məhsulları yükləyirik
   }, []);
 
-  // `wish` dəyişəni dəyişildikdə localStorage-a yazırıq
-  useEffect(() => {
-    localStorage.setItem("wish", JSON.stringify(wish));
-  }, [wish]);
+  const addToWish = (product) => {
+    const existingWish = wish.find((item) => item._id === product._id);
 
-  // Add to Wish funksiyası
-  const addToWish = (item) => {
-    const existingItem = wish.find((x) => x._id === item._id);
-
-    if (existingItem) {
-      // Mövcud element varsa, count-u artırırıq
-      const updatedWish = wish.map((x) =>
-        x._id === item._id ? { ...x, count: x.count + 1 } : x
-      );
+    if (existingWish) {
+      alert("Product is already in the wishlist");
+    } else {
+      const updatedWish = [...wish, product];
       setWish(updatedWish);
       localStorage.setItem("wish", JSON.stringify(updatedWish));
-    } else {
-      // Mövcud deyilsə, count: 1 ilə əlavə edirik
-      const newWish = [...wish, { ...item, count: 1 }];
-      setWish(newWish);
-      localStorage.setItem("wish", JSON.stringify(newWish));
     }
   };
 
-  // Remove from Wish funksiyası
-  const removeFromWish = (itemId) => {
-    const updatedWish = wish.filter((item) => item._id !== itemId);
-    setWish(updatedWish);
+  const removeFromWishList = (_id) => {
+    const updatedWish = wish.filter((item) => item._id !== _id);
     localStorage.setItem("wish", JSON.stringify(updatedWish));
+    setWish(updatedWish);
   };
 
   const dispatch = useDispatch();
@@ -75,21 +61,11 @@ const Section3 = () => {
                   Add to Basket
                 </button>
                 <button onClick={() => addToWish(item)}>Add To Wish List</button>
-                <button onClick={() => removeFromWish(item._id)}>
+                <button onClick={() => removeFromWishList(item._id)}>
                   Remove From Wish List
                 </button>
               </div>
             ))}
-        </div>
-
-        <div className="wishlist">
-          <h2>Wish List</h2>
-          {wish.map((item) => (
-            <div key={item._id} className="wish-item">
-              <span>{item.title}</span>
-              <button onClick={() => removeFromWish(item._id)}>Remove</button>
-            </div>
-          ))}
         </div>
       </div>
     </>

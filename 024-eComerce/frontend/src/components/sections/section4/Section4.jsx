@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./Section4.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductThunk } from "../../../redux/reducers/productSlice";
+import { postBasketThunk } from "../../../redux/reducers/basketSlice";
 
 const Section4 = () => {
 
@@ -34,7 +35,7 @@ const Section4 = () => {
       <div className="cart" key={item.id}>
         <img src={item.image} alt={item.title} />
         <div className="btn">
-          <button>Add to Basket</button>
+          <button onClick={()=>dispatch(postBasketThunk(item))}>Add to Basket</button>
         </div>
 
       </div>

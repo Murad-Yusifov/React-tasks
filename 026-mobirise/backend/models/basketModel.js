@@ -1,17 +1,11 @@
 import mongoose from "mongoose";
 
-
-const basketSchema = new mongoose.Schema({
-    items: [
-      {
-        type:mongoose.Schema.Types.Mixed,
-      }
-    ]
+const basketSchema = mongoose.Schema({
+    image:{type:String},
+    title:{type:String, required:true},
+    price:{type:String, required:true},
 }, {timestamps:true})
 
-const basketModel =mongoose.model('baskets', basketSchema)
+const basketModel = mongoose.model("basketMshop", basketSchema)
 
 export default basketModel
-
-
-

@@ -11,13 +11,12 @@ const getBasket = async (req, res)=>{
 
 
 const postBasket = async(req, res)=>{
-    const basketData =req.body
-    
-    const newBasket =await basketModel.create({item:basketData})
-    res.json(newBasket)
+    const {image, title,description, price} =req.body
+    const product = {image, title,description, price}
+    await basketModel.create(product)
+    res.json(product)
 
 }
-
 
 const deleteBasket = async (req, res) => {
     try {

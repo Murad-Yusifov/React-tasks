@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getBasketThunk, addToBasketAsync } from '../../src/redux/reducers/basketSlice'  
+import { getBasketThunk, addToBasketAsync, removeFromBasketAsync } from '../../src/redux/reducers/basketSlice'  
 
 const Basket = () => {
     const dispatch = useDispatch()
 
    
-    const data = useSelector(state => state.basket.items) 
+    const data = useSelector(state => state.basket.basket) 
     const loading = useSelector(state => state.basket.loading)
     const error = useSelector(state => state.basket.error)
 
 
     useEffect(() => {
         dispatch(getBasketThunk())  
-    }, [dispatch])  
+    }, [])  
 
  
     if (loading) return <span>Loading...</span>
@@ -29,8 +29,8 @@ const Basket = () => {
                     <span className="price">${item.price}</span>
                     <span>{item.title}</span>
                     <span className="desender">{item.description}</span>
-                    <button className="btn" onClick={() => dispatch(addToBasketAsync(item))}>
-                        Add to Basket
+                    <button className="btn" onClick={() => dispatch(removeFromBasketAsync(item._id))}>
+                        Remove
                     </button>
                 </div>
             ))}

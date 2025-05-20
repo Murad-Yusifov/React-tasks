@@ -1,74 +1,41 @@
-import basketModel from "../models/basketModel.js";
+import basketModel from "../models/basketModel.js"
 
-
-
-// Basketden melumatlari getirir.
-const getBasket = async (req, res)=>{
-   try {
-     const basket = await basketModel.findOne()
-    if(!basket) {
-        return res.status(404).json({message:"Basket tapilmadi."})
-
-    }
-    res.json(basket.items)
-    
-   } catch (error) {
-    res.status(500).json({message:"Basket melumatlari alinarken xeta bash verdi.", error})
-error:error.message
-
-    
-   }
-
-    
+const getBasket =async(req,res)=>{
+    const basket = await basketModel.find()
+    res.json(basket)
 }
 
-
-// Baskte melumat elave edir.   
-const  postBasket= async(req, res)=>{
-   try {
-     const {image, title, price} =req.body
-    const newItem = {image, title, price}
-
-    let basket = await basketModel.findOne();  //mehsulu tapir
-    if(!basket){
-        // basket yoxdursa yenisini yaradir.
-        basket =new basketModel({items:[newItem]})
-
-    }else {
-        // eger basket varsa movcud mehsulu elave edir.
-        basket.items.push(newItem)
-    }
-
-    await basket.save();
-    res.json(newItem)
-    
-   } catch (error) {
-    res.status(500).json({message:"Melumat elave edilerken xeta bash verdi.", error})
-    
-   }
-
-}
-
-
-// Basketden mehsul silir.
-const deleteBasket = async (req, res) => {
+const postBasket = async(req, res)=>{
     try {
-        const { id } = req.params;
-        const basket = await basketModel.findOne();
-        if (!basket) {
-            return res.status(404).json({ message: `Məhsul tapılmadı.` });
-        }
-
-        // Mehsulu arrayden silir.
-        res.json({message:`Item ${id} silindi.`})
+        const {image,title, price} =req.body
+    const basket ={image,title, price}
+    await basketModel.create(basket)
+    res.json(basket)
+    const createdBasket = await basketModel.create(basket);
+     console.log("Yaradılmış basket:", createdBasket);
+        
     } catch (error) {
-        res.status(500).json({ message: "Silmə zamanı xəta baş verdi.", error });
+        res.status(500).json(error)
+        
     }
+}
 
-    console.log(`Gelen id: ${id}`);
-};
-
-
-
+const deleteBasket = async(req, res)=>{
+    try {
+        const {id} = req.params;
+        const deleteBasket =await basketModel.findByIdAndDelete(id)
+        if(!deleteBasket) {
+            return res.status(404).json({message:`Mehsul ${id}-li data dapilmadi`})
+        }
+        res.json({message:`${id}-li mehsul silindi`})
+        
+    } catch (error) {
+        res.status(500).json({message:"Silinme zamani xeta bash verdi"})
+        console.log(error)
+        
+    }
+    console.log(`Gelen id: ${req.params.id}`);``
+    
+}
 
 export {getBasket, postBasket, deleteBasket}

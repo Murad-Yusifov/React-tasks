@@ -60,12 +60,12 @@ const Admin = () => {
 </label>
         <button type="submit">Submit</button>
       </form>
-  <div className="cover">
+  <div className="cover" style={{width:'100%'}}>
       {data &&
         data.map((item, index) => (
-          <div className="container" key={index}>
+          <div className="container" key={index} style={{width:'100%'}}>
             {item.image ? (
-        <img className="image" src={item.image} alt={item.title} />
+        <img style={{width:'20%'}} className="image" src={item.image} alt={item.title} />
       ) : null}
             <span>{item.title}</span>
             <span>{item.price}</span>

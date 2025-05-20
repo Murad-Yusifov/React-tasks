@@ -1,33 +1,44 @@
 import productModel from "../models/productsModel.js";
 
-const getProduct = async (req, res)=>{
-    const products = await productModel.find()
-    res.json(products)
-}
+const getProduct = async (req, res) => {
+    try {
+        const products = await productModel.find();
+        console.log("Fetched products:", products); // Log
+        res.json(products);
+    } catch (error) {
+        console.error("Error fetching products:", error); // Log
+        res.status(500).json({ error: "Server error" });
+    }
+};
 
-const postProduct = async(req, res)=>{
-    const {image, title, price} =req.body
-    const product = {image, title, price}
-    await productModel.create(product)
-    res.json(product)
 
-}
+const postProduct = async (req, res) => {
+    try {
+        const { image, title, price } = req.body;
+        const product = { image, title, price };
+        const createdProduct = await productModel.create(product);
+        console.log("Product created:", createdProduct); // Log
+        res.json(createdProduct);
+    } catch (error) {
+        console.error("Error creating product:", error); // Log
+        res.status(500).json({ error: "Server error" });
+    }
+};
+
 const deleteProduct = async (req, res) => {
     try {
         const { id } = req.params;
         const deletedProduct = await productModel.findByIdAndDelete(id);
+        console.log(`Product deleted with ID: ${id}`); // Log
         if (!deletedProduct) {
-            return res.status(404).json({ message: `Məhsul ${id} tapılmadı.` });
+            return res.status(404).json({ message: "Product not found" });
         }
-        res.json({ message: `${id} -li məhsul silindi.` });
+        res.json({ message: `Product with ID ${id} deleted` });
     } catch (error) {
-        res.status(500).json({ message: "Silmə zamanı xəta baş verdi.", error });
+        console.error("Error deleting product:", error); // Log
+        res.status(500).json({ error: "Server error" });
     }
-
-    console.log(`Gelen id: ${id}`);
 };
-
-
 
 
 export {getProduct, postProduct, deleteProduct}

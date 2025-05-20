@@ -4,7 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: sticky;
+  top: 0;
+  background-color: white;
   z-index: 1;
 
   nav {
@@ -21,7 +23,8 @@
     }
 
     ul {
-      width: 45%;
+      width: 50%;
+      font-size: 24px;
       display: flex;
       list-style: none;
       justify-content: space-between;

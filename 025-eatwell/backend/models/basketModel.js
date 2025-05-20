@@ -2,14 +2,10 @@ import mongoose from "mongoose";
 
 
 const basketSchema = new mongoose.Schema({
-    items: [
-       {
-        image:String,
-        title:String,
-        description:String,
-        price:Number
-       }
-    ]
+  image:{type:String, require:true},
+    title:{type:String, require:true},
+    description:{type:String, require:true},
+    price:{type:String, require:true}
 }, {timestamps:true})
 
 const basketModel =mongoose.model('basket', basketSchema)

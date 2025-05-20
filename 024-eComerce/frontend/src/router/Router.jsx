@@ -4,9 +4,9 @@ import Home from '../pages/Home'
 import Layout from '../components/Layout'
 import NotFound from '../components/NotFound'
 import { Provider } from 'react-redux'
-import { store } from '../redux/store'
 import Admin from '../pages/Admin'
 import Wish from '../pages/wish/Wish'
+import { store } from '../redux/store'
 
 const Router = () => {
   return (
