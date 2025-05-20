@@ -17,11 +17,11 @@ export const route = createBrowserRouter([
             },
             {
                 path:"/admin",
-                element:Admin
+                Component:Admin
             },
             {
                 path:"/basket",
-                element:Basket
+                Component:Basket
             },
         ]},
         {

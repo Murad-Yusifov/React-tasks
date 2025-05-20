@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Section3.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { getProductThunk } from "../../../redux/reducers/productSlice";
 import { postBasketThunk } from "../../../redux/reducers/basketSlice";
+import { getProductThunk } from "../../../redux/reducers/productSlice";
 
 const Section3 = () => {
   const [wish, setWish] = useState([]);
@@ -24,11 +24,10 @@ const Section3 = () => {
     }
   };
 
-
-    const removeFromWishList = (_id) => {
-    const updatedWishList = wishList.filter((item) => item._id !== _id);
-    localStorage.setItem("wish", JSON.stringify(updatedWishList));
-    setWishList(updatedWishList);
+  const removeFromWishList = (_id) => {
+    const updatedWish = wish.filter((item) => item._id !== _id);
+    localStorage.setItem("wish", JSON.stringify(updatedWish));
+    setWish(updatedWish);
   };
 
   const dispatch = useDispatch();

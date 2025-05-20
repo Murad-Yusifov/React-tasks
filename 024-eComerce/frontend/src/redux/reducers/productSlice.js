@@ -34,15 +34,16 @@ const productSlice = createSlice({
             state.error=action.error.message
         })
         // Post
-        .addCase(postProductThunk.fulfilled, (state, action)=>{
-            state.loafding =false
-           state.products.push(action.payload)
-        })
-          // Delete
-          .addCase(deleteProductThunk.fulfilled, (state, action)=>{
-            state.loafding =false
-            state.products=state.products.filter(item=>item._id !==action.payload)
-        })
+     .addCase(postProductThunk.fulfilled, (state, action) => {
+    state.loading = false;
+    state.products.push(action.payload);
+})
+// delete
+.addCase(deleteProductThunk.fulfilled, (state, action) => {
+    state.loading = false;
+    state.products = state.products.filter(item => item._id !== action.payload);
+})
+
     }
 })
 

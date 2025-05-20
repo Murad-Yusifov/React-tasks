@@ -44,15 +44,11 @@ export const removeFromBasketAsync = createAsyncThunk(
 const basketSlice = createSlice({
   name: "basket",
   initialState: {
-    items: [],
+    basket: [],
     loading: false,
     error: null,
   },
-  reducers: {
-    clearBasket: (state) => {
-      state.items = [];
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
 
@@ -64,7 +60,7 @@ const basketSlice = createSlice({
       })
       .addCase(getBasketThunk.fulfilled, (state, action) => {
         state.loading = false;
-        state.items = action.payload; 
+        state.basket = action.payload; 
       })
       .addCase(getBasketThunk.rejected, (state, action) => {
         state.loading = false;
@@ -79,7 +75,7 @@ const basketSlice = createSlice({
       })
       .addCase(addToBasketAsync.fulfilled, (state, action) => {
         state.loading = false;
-        state.items.push(action.payload);
+        state.basket.push(action.payload);
       })
       .addCase(addToBasketAsync.rejected, (state, action) => {
         state.loading = false;
@@ -92,7 +88,7 @@ const basketSlice = createSlice({
       })
       .addCase(removeFromBasketAsync.fulfilled, (state, action) => {
         state.loading = false;
-        state.items = state.items.filter((item) => item._id !== action.payload);
+        state.basket = state.basket.filter((item) => item._id !== action.payload);
       })
       .addCase(removeFromBasketAsync.rejected, (state, action) => {
         state.loading = false;
@@ -100,6 +96,4 @@ const basketSlice = createSlice({
       });
   },
 });
-
-export const { clearBasket } = basketSlice.actions;
 export default basketSlice.reducer;

@@ -1,8 +1,25 @@
-import React from 'react'
+import React, { useEffect} from 'react'
 import './Header.scss'
 import { Link } from 'react-router'
+import { useDispatch, useSelector } from 'react-redux'
+import { getBasketThunk } from '../../redux/reducers/basketSlice'
 
 const Header = () => {
+
+  const dispatch = useDispatch()
+
+  const data = useSelector(state=>state.basket.basket)
+
+   
+
+  useEffect(()=>{
+    dispatch(getBasketThunk())
+   
+  },[dispatch])
+
+
+
+
   return (
     <div className='wrapper'>
         <nav>
@@ -16,7 +33,7 @@ const Header = () => {
                 <li><Link className='link' to="/">Offer</Link></li>
                 <li><Link className='link' to="/">Menu</Link></li>
                 <li><Link className='link' to="/">News</Link></li>
-                <li><Link className='link' to="/basket">Basket</Link></li>
+                <li><Link className='link' to="/basket">Basket  {data ? data.length : 0}</Link></li>
                 <li><Link className='link' to="/admin">Admin</Link></li>
             </ul>
 
