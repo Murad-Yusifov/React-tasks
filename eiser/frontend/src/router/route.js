@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import Home from "../pages/home/Home";
 import Layout from "../components/Layout";
 import NotFound from "../components/NotFound";
+import Basket from "../pages/basket/Basket";
 
 export const router = createBrowserRouter([
    {
@@ -13,7 +14,7 @@ export const router = createBrowserRouter([
         Component:Home
     },{
         path:'/',
-        Component:Home
+        Component:Basket
     }
     ]},
     {

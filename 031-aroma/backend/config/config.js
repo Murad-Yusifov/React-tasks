@@ -5,7 +5,7 @@ configDotenv()
 
 export const connectDB = async()=>{
     try {
-        await mongoose.connect(process.MONGO_URI)
+        await mongoose.connect(process.env.MONGO_URI)
         console.log("Databazaya qoshuldu");
         
         
@@ -17,3 +17,4 @@ export const connectDB = async()=>{
 }
 
 // MONGO_URI=mongodb+srv://murad123:CtsR6UXRTl9kpnzl@cluster0.vrcdp0u.mongodb.net/
+// mongodb+srv://murad123:CtsR6UXRTl9kpnzl@cluster0.vrcdp0u.mongodb.net/

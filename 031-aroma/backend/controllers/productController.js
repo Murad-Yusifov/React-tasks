@@ -1,50 +1,60 @@
-import productModel from "../models/productModel"
+import productModel from "../models/productModel.js";
 
-
-
-
-const getProduct = async(req,res)=>{
-    const products = await productModel.find()
-    res.json(products)
-}
-
-const postProduct = async(req, res)=>{
-    const {image, title, price}=req.body
-    const products ={image, title, price}
-    await productModel.create(products)
-}
-
-const deleteProducts = async(req, res)=>{
+// Get all products
+const getProduct = async (req, res) => {
     try {
-        const {id}=req.params
-        const deleteProducts = await productModel.findByIdAndDelete(id)
-        if(!deleteProducts){
-            return res.status(404).json({message:`Mehsul ${id}-li data tapilmadi`})
-        }
-        res.json({message:`${id}-li data silindi`})
-        
+        const products = await productModel.find();
+        res.json(products);
     } catch (error) {
-        res.status(500).json({message:'SIlme zamani xeta bash verdi', error})
-        
+        res.status(500).json({ message: "Məhsulları götürərkən xəta baş verdi", error });
     }
-}
+};
 
-const putProduct = async (req, res)=>{
-  try {
-      const {id} = req.params
-    const {image, title, price}= req.body
-    if(!image || !title || !price) {
-        return res.status(400).json({message:'Bwtwn melumatlari temin edin'})
+// Create a new product
+const postProduct = async (req, res) => {
+    try {
+        const { image, title, price } = req.body;
+        if (!image || !title || !price) {
+            return res.status(400).json({ message: "Bütün məlumatları təmin edin" });
+        }
+        const product = { image, title, price };
+        const createdProduct = await productModel.create(product);
+        res.status(201).json(createdProduct);
+    } catch (error) {
+        res.status(500).json({ message: "Məhsul yaradılarkən xəta baş verdi", error });
     }
-    const updateProduct =await productModel.findByIdAndUpdate(id, {image, title, price}, {new:true})
-    if(!updateProduct) {
-        return res.status(404).json({message:`${id}-li data tapilmadi`})
+};
+
+// Delete a product
+const deleteProducts = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const deletedProduct = await productModel.findByIdAndDelete(id);
+        if (!deletedProduct) {
+            return res.status(404).json({ message: `Məhsul ${id}-li data tapılmadı` });
+        }
+        res.json({ message: `${id}-li data silindi` });
+    } catch (error) {
+        res.status(500).json({ message: "Silinmə zamanı xəta baş verdi", error });
     }
-    res.json(updateProduct)
-    
-  } catch (error) {
-    console.log(error);
-    
-    
-  }
-}
+};
+
+// Update a product
+const putProduct = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { image, title, price } = req.body;
+        if (!image || !title || !price) {
+            return res.status(400).json({ message: "Bütün məlumatları təmin edin" });
+        }
+        const updatedProduct = await productModel.findByIdAndUpdate(id, { image, title, price }, { new: true });
+        if (!updatedProduct) {
+            return res.status(404).json({ message: `${id}-li data tapılmadı` });
+        }
+        res.json(updatedProduct);
+    } catch (error) {
+        res.status(500).json({ message: "Yenilənmə zamanı xəta baş verdi", error });
+    }
+};
+
+export { getProduct, postProduct, deleteProducts, putProduct };
