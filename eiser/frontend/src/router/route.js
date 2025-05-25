@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
         path:'/',
         Component:Home
     },{
-        path:'/',
+        path:'/basket',
         Component:Basket
     }
     ]},

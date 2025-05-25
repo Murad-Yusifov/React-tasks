@@ -1,8 +1,11 @@
 import React from 'react'
+import Sections from './sections/Sections'
 
 const Basket = () => {
   return (
-    <div>Basket</div>
+   <>
+   <Sections/>
+   </>
   )
 }
 

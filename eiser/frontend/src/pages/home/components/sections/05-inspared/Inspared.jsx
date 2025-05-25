@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../../../../../redux/reducers/productSlice";
+import Swal from "sweetalert2";
 
 const Inspired = () => {
   const [touchedItems, setTouchedItems] = useState({}); // Hər məhsul üçün vəziyyət
@@ -14,11 +15,20 @@ const Inspired = () => {
 
       if (isInWishList) {
         console.log("Bu məhsul artıq arzu siyahısındadır!");
+        Swal.fire({
+          title: "ALready added to the wish list!",
+          icon: "success",
+          draggable: true,
+        });
       } else {
         wish.push(item);
         localStorage.setItem("wished", JSON.stringify(wish));
-        alert("Məhsul arzu siyahısına əlavə olundu!");
         console.log("Yeni məhsul əlavə edildi", wish);
+         Swal.fire({
+          title: "Məhsul arzu siyahısına əlavə olundu",
+          icon: "success",
+          draggable: true,
+        });
 
         window.dispatchEvent(new Event("storage"));
       }
@@ -45,7 +55,11 @@ const Inspired = () => {
     }
   };
 
-  const { product: data, loading, error } = useSelector((state) => state.product);
+  const {
+    product: data,
+    loading,
+    error,
+  } = useSelector((state) => state.product);
 
   useEffect(() => {
     dispatch(getProduct());

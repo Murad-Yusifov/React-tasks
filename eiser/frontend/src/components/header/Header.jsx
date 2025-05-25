@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CiHeart, CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
+import { FaCartArrowDown, FaHeart } from "react-icons/fa";
 
 const Header = () => {
     const [basketCount, setBasketCount] = useState(0);
@@ -36,22 +37,24 @@ const Header = () => {
                         alt="Logo"
                     />
                 </div>
-                <ul className="w-[35%] flex justify-around">
-                    <li className="text-2xl cursor-pointer hover:text-green-300 transition">Home</li>
+                <ul className="w-[35%] flex justify-around items-center">
+                    <li className="text-2xl cursor-pointer hover:text-green-300 transition"><a href="/">Home</a></li>
                     <li className="text-2xl cursor-pointer hover:text-green-300 transition">Shop</li>
                     <li className="text-2xl cursor-pointer hover:text-green-300 transition">Blog</li>
-                    <li className="text-2xl cursor-pointer hover:text-green-300 transition">
-                        Wish
-                    </li>
-                    <sub>
-                        <div className="h-[20px] w-[20px] text-md text-white rounded-[50%] bg-red-500 flex justify-center items-center">
+                    <li className="text-2xl cursor-pointer hover:text-green-300 transition relative">
+                       <FaHeart/>
+
+                        <span className="w-[20px] h-[20px] absolute top-[-16px] right-[-10px] text-sm rounded-full bg-red-500 flex justify-center items-center text-white">
                             {wishListCount}
-                        </div>
-                    </sub>
-                    <li className="text-2xl cursor-pointer hover:text-green-300 transition">
-                        Basket
+                    </span>
                     </li>
-                    <sub>{basketCount}</sub>
+                    <li className="text-2xl cursor-pointer hover:text-green-300 transition relative">
+                      <a href="/basket"><FaCartArrowDown/></a>
+
+                        <span className="w-[20px] h-[20px] absolute top-[-15px] right-[-15px] text-sm rounded-full bg-red-500 flex justify-center items-center text-white">
+                            {basketCount}
+                    </span>
+                    </li>
                 </ul>
                 <ul className="w-[14%] flex justify-around">
                     <li className="text-2xl font-bold cursor-pointer hover:text-green-300 transition">
