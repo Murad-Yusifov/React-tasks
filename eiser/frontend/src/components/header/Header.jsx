@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CiHeart, CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
 import { FaCartArrowDown, FaHeart } from "react-icons/fa";
+import { Link } from "react-router";
 
 const Header = () => {
     const [basketCount, setBasketCount] = useState(0);
@@ -42,7 +43,9 @@ const Header = () => {
                     <li className="text-2xl cursor-pointer hover:text-green-300 transition"><a href="#products">Products</a></li>
                     <li className="text-2xl cursor-pointer hover:text-green-300 transition"><a href="/detaile">Detailes</a></li>
                     <li className="text-2xl cursor-pointer hover:text-green-300 transition relative">
+                       <Link to={'/wish'}>
                        <FaHeart/>
+                       </Link>
 
                         <span className="w-[20px] h-[20px] absolute top-[-16px] right-[-10px] text-sm rounded-full bg-red-500 flex justify-center items-center text-white">
                             {wishListCount}

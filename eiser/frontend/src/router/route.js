@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import NotFound from "../components/NotFound";
 import Basket from "../pages/basket/Basket";
 import Detailed from "../pages/detailed/Detailed";
+import Wish from "../pages/wish/Wish";
 
 export const router = createBrowserRouter([
    {
@@ -19,6 +20,9 @@ export const router = createBrowserRouter([
     },{
         path:'/product/:id',
         Component:Detailed
+    },{
+        path:'/wish',
+        Component:Wish
     }
     ]},
     {

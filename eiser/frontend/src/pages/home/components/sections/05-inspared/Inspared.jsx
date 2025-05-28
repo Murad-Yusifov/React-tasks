@@ -100,13 +100,14 @@ const Inspired = () => {
             className="w-[200px] h-[400px] flex flex-col justify-around shadow text-center items-center gap-4 cursor-pointer"
             key={item.id}
           >
-            <Link to={`/product/${item.id}`}>
             <div className="w-full h-2/4 overflow-hidden flex justify-center">
+            <Link to={`/product/${item.id}`}>
               <img
                 src={item.image}
                 alt={item.title}
                 className="h-[90%] object-contain"
               />
+               </Link>
             </div>
             <p
               className="text-md text-gray-600"
@@ -134,7 +135,6 @@ const Inspired = () => {
                 Add to Wish
               </button>
             </div>
-            </Link>
           </div>
         ))}
       </div>
