@@ -39,8 +39,8 @@ const Header = () => {
                 </div>
                 <ul className="w-[35%] flex justify-around items-center">
                     <li className="text-2xl cursor-pointer hover:text-green-300 transition"><a href="/">Home</a></li>
-                    <li className="text-2xl cursor-pointer hover:text-green-300 transition">Shop</li>
-                    <li className="text-2xl cursor-pointer hover:text-green-300 transition">Blog</li>
+                    <li className="text-2xl cursor-pointer hover:text-green-300 transition"><a href="#products">Products</a></li>
+                    <li className="text-2xl cursor-pointer hover:text-green-300 transition"><a href="/detaile">Detailes</a></li>
                     <li className="text-2xl cursor-pointer hover:text-green-300 transition relative">
                        <FaHeart/>
 

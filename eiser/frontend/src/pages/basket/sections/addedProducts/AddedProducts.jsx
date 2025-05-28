@@ -75,7 +75,7 @@ const [touchedItems, setTouchedItems] = useState({});
 
            <div className="w-full flex justify-around">
             <span className="w-[30px] h-[30px] text-white rounded-[50%] bg-green-500 transition-1200 hover:bg-green-600 active:bg-green-400 active:opacity-80  " onClick={()=>decreaseProductsCount(item)}>-</span>
-             <span className="text-md text-gray-800 font-bold">${item.price*item.count}</span>
+             <span className="text-md text-gray-800 font-bold">${Math.round(item.price*item.count)}</span>
              <span className="w-[30px] h-[30px] text-white rounded-[50%] bg-green-500 hover:bg-green-400 transition-1200 " onClick={()=>increaceProductCount(item)}>+</span>
            </div>
             <div className="w-full h-[20%] flex flex-col items-center justify-center gap-4">

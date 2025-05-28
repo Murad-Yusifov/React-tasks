@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../../../../../redux/reducers/productSlice";
 import Swal from "sweetalert2";
+import { Link, useLocation } from "react-router";
 
 const Inspired = () => {
   const [touchedItems, setTouchedItems] = useState({}); // Hər məhsul üçün vəziyyət
@@ -65,6 +66,17 @@ const Inspired = () => {
     dispatch(getProduct());
   }, [dispatch]);
 
+   const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [hash]);
+
   if (loading) return <span>Loading...</span>;
   if (error) return <span>Error: {error}</span>;
 
@@ -81,13 +93,14 @@ const Inspired = () => {
   };
 
   return (
-    <section className="w-full bg-cover bg-no-repeat bg-left flex justify-center items-center">
+    <section className="w-full bg-cover bg-no-repeat bg-left flex justify-center items-center" id="products">
       <div className="w-[70%] h-2/4 grid grid-cols-4 gap-6 self-center items-center pr-8">
         {modifiedData.map((item) => (
           <div
             className="w-[200px] h-[400px] flex flex-col justify-around shadow text-center items-center gap-4 cursor-pointer"
             key={item.id}
           >
+            <Link to={`/product/${item.id}`}>
             <div className="w-full h-2/4 overflow-hidden flex justify-center">
               <img
                 src={item.image}
@@ -121,6 +134,7 @@ const Inspired = () => {
                 Add to Wish
               </button>
             </div>
+            </Link>
           </div>
         ))}
       </div>

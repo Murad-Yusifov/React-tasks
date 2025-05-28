@@ -3,6 +3,7 @@ import Home from "../pages/home/Home";
 import Layout from "../components/Layout";
 import NotFound from "../components/NotFound";
 import Basket from "../pages/basket/Basket";
+import Detailed from "../pages/detailed/Detailed";
 
 export const router = createBrowserRouter([
    {
@@ -15,6 +16,9 @@ export const router = createBrowserRouter([
     },{
         path:'/basket',
         Component:Basket
+    },{
+        path:'/product/:id',
+        Component:Detailed
     }
     ]},
     {
