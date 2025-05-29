@@ -5,6 +5,7 @@ import NotFound from "../components/NotFound";
 import Basket from "../pages/basket/Basket";
 import Detailed from "../pages/detailed/Detailed";
 import Wish from "../pages/wish/Wish";
+import Admin from "../pages/admin/Admin";
 
 export const router = createBrowserRouter([
    {
@@ -23,6 +24,9 @@ export const router = createBrowserRouter([
     },{
         path:'/wish',
         Component:Wish
+    }, {
+        path:"/admin",
+        Component:Admin
     }
     ]},
     {
